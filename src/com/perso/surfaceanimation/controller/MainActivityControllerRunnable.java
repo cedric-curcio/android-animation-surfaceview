@@ -7,6 +7,8 @@ import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
 import com.perso.surfaceanimation.engine.GameClock;
+import com.perso.surfaceanimation.engine.animation.SurfaceAnimator;
+import com.perso.surfaceanimation.model.AddAnimationEvent;
 import com.perso.surfaceanimation.model.AppEvent;
 import com.perso.surfaceanimation.view.MySurfaceView;
 
@@ -50,6 +52,7 @@ public class MainActivityControllerRunnable implements Runnable {
 		mContext = c;
 		mSurfaceView = v;
 		mSurfaceHolder = surfaceHolder;
+		SurfaceAnimator.getInstance().init(this);
 		mIsControllerReady = true;
 	}
 
@@ -100,8 +103,13 @@ public class MainActivityControllerRunnable implements Runnable {
 			if(event == null){
 				break;
 			}
+			else if(event instanceof AddAnimationEvent){
+				SurfaceAnimator.getInstance().addAnimation((AddAnimationEvent) event);
+			}
 			//create your events here
 		}
+		//update animation here
+		SurfaceAnimator.getInstance().update();
 	}
 
 	public void pause(){
@@ -150,6 +158,14 @@ public class MainActivityControllerRunnable implements Runnable {
 
 	public void setRunning(boolean b) {
 		mRun = b;		
+	}
+
+	/**
+	 * post an event in the queue
+	 * @param event
+	 */
+	public void sendGameEvent(AppEvent event) {
+		mEventQueue.add(event);
 	}
 
 }
