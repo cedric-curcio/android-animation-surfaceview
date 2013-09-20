@@ -22,7 +22,7 @@
 
 />
 
-    <com.perso.git.surfaceanimation.view.MySurfaceView
+    <com.perso.surfaceanimation.view.MySurfaceView
         android:id="@+id/surfaceView1"
         android:layout_width="match_parent"
         android:layout_height="280dp"
