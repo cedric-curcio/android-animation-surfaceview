@@ -6,8 +6,8 @@ import java.util.Iterator;
 
 import com.perso.surfaceanimation.controller.MainActivityControllerRunnable;
 import com.perso.surfaceanimation.engine.GameClock;
-import com.perso.surfaceanimation.model.AddAnimationEvent;
-import com.perso.surfaceanimation.model.RemoveAnimationEvent;
+import com.perso.surfaceanimation.model.event.AddAnimationEvent;
+import com.perso.surfaceanimation.model.event.RemoveAnimationEvent;
 
 /**
  * SurfaceAnimator manages the bitmap animation life cycle.

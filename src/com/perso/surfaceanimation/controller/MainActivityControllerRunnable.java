@@ -8,8 +8,8 @@ import android.view.SurfaceHolder;
 
 import com.perso.surfaceanimation.engine.GameClock;
 import com.perso.surfaceanimation.engine.animation.SurfaceAnimator;
-import com.perso.surfaceanimation.model.AddAnimationEvent;
-import com.perso.surfaceanimation.model.AppEvent;
+import com.perso.surfaceanimation.model.event.AddAnimationEvent;
+import com.perso.surfaceanimation.model.event.AppEvent;
 import com.perso.surfaceanimation.view.MySurfaceView;
 
 /**

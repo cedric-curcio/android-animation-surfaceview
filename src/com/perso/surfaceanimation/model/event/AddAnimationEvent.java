@@ -1,4 +1,4 @@
-package com.perso.surfaceanimation.model;
+package com.perso.surfaceanimation.model.event;
 
 import com.perso.surfaceanimation.engine.animation.MyAnimation;
 
