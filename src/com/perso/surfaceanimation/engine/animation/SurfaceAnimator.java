@@ -51,6 +51,11 @@ public class SurfaceAnimator {
 		mAnimToAdd.add(event.anim);
 	}
 
+	//NO safe thread, use register animation if not in processing event thread 
+	public void addAnimation(MyAnimation anim){
+		mAnimToAdd.add(anim);
+	}
+
 	/**
 	 * Must be called from processing event thread only.
 	 */
@@ -104,7 +109,7 @@ public class SurfaceAnimator {
 	public void postToUnregisterAnimation(MyAnimation anim) {
 		mRunnable.sendGameEvent(new RemoveAnimationEvent(anim));
 	}
-	
+
 	/**
 	 * Must be call from main thread.
 	 * @param event
@@ -118,7 +123,7 @@ public class SurfaceAnimator {
 			}
 		}
 	}
-	
+
 	public void clearAll(){
 		mAnimSet.clear();
 		mAnimToAdd.clear();

@@ -20,7 +20,8 @@ public class Sprite {
 	private float mAngle; //mandatory
 	private Bitmap mDefaultImage; //mandatory
 	private HashMap<String, MyAnimation> mAnimMap; //optional
-	
+	private MyAnimation mCurrentAnimation; //optionnal
+	private int mSpeed; //optionnal
 	
 	public Sprite(int x, int y, int w, int h, float angle, Bitmap image){
 		this.mX = x;
@@ -87,4 +88,21 @@ public class Sprite {
 	public void setAnimMap(HashMap<String, MyAnimation> mAnimMap) {
 		this.mAnimMap = mAnimMap;
 	}
+	
+	public MyAnimation getCurrentAnimation(){
+		return mCurrentAnimation;
+	}
+	
+	public void setCurrenAnimation(MyAnimation anim){
+		mCurrentAnimation = anim;
+	}
+
+	public int getSpeed() {
+		return mSpeed;
+	}
+	
+	public void setSpeed(int speed){
+		mSpeed = speed;
+	}
+	
 }
